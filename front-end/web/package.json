@@ -30,6 +30,7 @@
     "@storybook/nextjs": "^7.0.7",
     "@storybook/react": "^7.0.7",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/json-schema": "^7.0.12",
     "eslint-plugin-storybook": "^0.6.11",
     "storybook": "^7.0.7"
   }

@@ -1,0 +1,88 @@
+.radio-button {
+    width: 280px;
+    height: 56px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .8em;
+    padding: 1em 2em 1em .5em;
+    border: 1px solid var(--radio-button-border-color, #CFCFCF);
+    border-radius: 8px;
+
+    &__label {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.25px;
+        color: var(--radio-button-color-label, #000);
+
+        &::before {
+            content: '';
+            width: 1.25em;
+            height: 1.25em;
+            position: absolute;
+            left: .5em;
+            top: 1.3em;
+            border: 1px solid var(--radio-button-label-circle-border-color, #CFCFCF);
+            border-radius: 50px;
+        }
+
+        &::after {
+            content: '';
+            width: 1em;
+            height: 1em;
+            position: absolute;
+            left: 0.65em;
+            top: 1.25rem;
+            border-radius: 50px;
+            background-color: red;
+            animation: radioButtonEffectHidden .4s ease-in-out forwards;
+        }
+    }
+
+    &__input {
+        pointer-events: auto;
+        opacity: 0;
+        outline: none;
+
+        &:checked {
+            &+.radio-button__label::after {
+                animation: radioButtonEffectShow .4s ease-in-out forwards;
+            }
+        }
+        &:disabled {
+            pointer-events: none;
+        }
+    }
+
+    &--active {
+        --radio-button-border-color: red;
+    }
+}
+
+
+
+/*=============================================
+=                Animations                   =
+=============================================*/
+
+
+
+/*=====  End of Animations  ======*/
+@keyframes radioButtonEffectShow {
+    from {
+        clip-path: circle(0% at 50% 50%);
+    }
+    to {
+        clip-path: circle(50% at 50% 50%);
+    }
+}
+@keyframes radioButtonEffectHidden {
+    from {
+        clip-path: circle(50% at 50% 50%);
+    }
+
+    to {
+        clip-path: circle(0% at 50% 50%);
+    }
+}

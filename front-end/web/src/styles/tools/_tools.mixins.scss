@@ -1,0 +1,25 @@
+@mixin hide() {
+    position: absolute;
+    width: em(1px);
+    height: em(1px);
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    border: 0;
+}
+
+@mixin show() {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    overflow: visible;
+    clip: initial;
+    -webkit-clip-path: none;
+    clip-path: none;
+    border: inherit;
+    white-space: inherit;
+}
