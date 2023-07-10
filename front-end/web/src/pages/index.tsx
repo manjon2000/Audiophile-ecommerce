@@ -15,6 +15,7 @@ export default function Home() {
       <main className='hi-guys'>
         <CardCategory
           urlLink='https://google.es'
+          targetLink= "_blank"
         />
       </main>
     </>
