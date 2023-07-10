@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import RadioButton from '@/components/radioButton/radioButton'
+import {RadioButton} from '@/components/radioButton/radioButton'
+import CardCategory  from '@/components/cardCategory/cardCategory'
 
 export default function Home() {
   return (
@@ -12,7 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='hi-guys'>
-        <RadioButton radioButtonId={"3242"} inputName={"radioButtonName"} label={"Cash on Delivery"}  isDisabled={false} />
+        <CardCategory
+          urlLink='https://google.es'
+          targetLink= "_blank"
+        />
       </main>
     </>
   )
